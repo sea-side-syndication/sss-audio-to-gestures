@@ -9,6 +9,7 @@ import pandas as pd
 from omegaconf import DictConfig
 from rich.console import Console
 
+from ZEGGS.utility.logger import logger
 from anim import bvh
 from anim import quat
 from anim.txform import *
@@ -421,7 +422,9 @@ def generate_gesture(
 
 
             except (PermissionError, OSError) as e:
+                logger.error(f"Failed to generate: {e}")
                 print(e)
+    print("Done", final_style_encoding)
     return final_style_encoding
 
 

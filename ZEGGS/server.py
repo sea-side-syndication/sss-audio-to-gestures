@@ -11,9 +11,7 @@ from ZEGGS.generate import generate_gesture
 import torch
 from dotenv import load_dotenv
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from ZEGGS.utility.logger import logger
 
 app = Flask(__name__)
 
@@ -139,6 +137,7 @@ def process_request(data: Dict[str, Any]) -> Tuple[Dict[str, Any], Optional[int]
             styles = [(style_path, [0, 100])]
 
         except ValueError as e:
+            logger.error('exception:',str(e) )
             return {"status": "error", "message": f"Invalid emotion: {emotion_str}"}, 400
 
         # Optional parameters with defaults
@@ -160,9 +159,10 @@ def process_request(data: Dict[str, Any]) -> Tuple[Dict[str, Any], Optional[int]
         }, None
 
     except KeyError as e:
+        logger.exception("Error processing request", str(e))
         return {"status": "error", "message": f"Missing required parameter: {str(e)}"}, 400
     except Exception as e:
-        logger.exception("Error processing request")
+        logger.exception("Error processing request", str(e))
         return {"status": "error", "message": f"Error processing request: {str(e)}"}, 400
 
 
@@ -213,7 +213,7 @@ def generate_animation():
         })
 
     except Exception as e:
-        logger.exception("Error generating animation")
+        logger.exception("Error processing request", str(e))
         return jsonify({
             "status": "error",
             "message": str(e)
