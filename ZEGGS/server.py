@@ -1,3 +1,8 @@
+from ZEGGS.emotion_styles import get_random_style_for_emotion, Emotion
+from ZEGGS.generate import generate_gesture
+
+from ZEGGS.utility.logger import logger
+
 from flask import Flask, request, jsonify
 from pathlib import Path
 import json
@@ -6,12 +11,9 @@ import sys
 import logging
 from typing import Optional, Dict, Tuple, Union, Any
 
-from ZEGGS.emotion_styles import get_random_style_for_emotion, Emotion
-from ZEGGS.generate import generate_gesture
 import torch
 from dotenv import load_dotenv
 
-from ZEGGS.utility.logger import logger
 
 app = Flask(__name__)
 

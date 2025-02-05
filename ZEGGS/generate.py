@@ -10,14 +10,14 @@ from omegaconf import DictConfig
 from rich.console import Console
 
 from ZEGGS.utility.logger import logger
-from anim import bvh
-from anim import quat
-from anim.txform import *
-from audio.audio_files import read_wavfile
-from data_pipeline import preprocess_animation
-from data_pipeline import preprocess_audio
-from helpers import split_by_ratio
-from utils import write_bvh
+from ZEGGS.anim import bvh
+from ZEGGS.anim import quat
+from ZEGGS.anim.txform import *
+from ZEGGS.audio.audio_files import read_wavfile
+from ZEGGS.data_pipeline import preprocess_animation
+from ZEGGS.data_pipeline import preprocess_audio
+from ZEGGS.helpers import split_by_ratio
+from ZEGGS.utils import write_bvh
 
 
 def generate_gesture(

@@ -10,20 +10,20 @@ import numpy as np
 from torch.utils.data.dataloader import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
-from anim import quat
-from anim.tquat import *
-from anim.txform import *
-from dataset import SGDataset
-from helpers import flatten_dict
-from helpers import progress
-from helpers import save_useful_info
-from modules import Decoder
-from modules import SpeechEncoder
-from modules import StyleEncoder
-from modules import compute_KL_div
-from modules import normalize
-from optimizers import RAdam
-from utils import write_bvh
+from ZEGGS.anim import quat
+from ZEGGS.anim.tquat import *
+from ZEGGS.anim.txform import *
+from ZEGGS.dataset import SGDataset
+from ZEGGS.helpers import flatten_dict
+from ZEGGS.helpers import progress
+from ZEGGS.helpers import save_useful_info
+from ZEGGS.modules import Decoder
+from ZEGGS.modules import SpeechEncoder
+from ZEGGS.modules import StyleEncoder
+from ZEGGS.modules import compute_KL_div
+from ZEGGS.modules import normalize
+from ZEGGS.optimizers import RAdam
+from ZEGGS.utils import write_bvh
 
 
 def train(

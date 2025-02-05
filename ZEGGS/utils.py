@@ -1,7 +1,7 @@
 import numpy as np
 from scipy import interpolate
 
-from anim import bvh, quat
+from ZEGGS.anim import bvh, quat
 
 
 def change_bvh(filename, savename, order=None, fps=None, pace=1.0, center=False):

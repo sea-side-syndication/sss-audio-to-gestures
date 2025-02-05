@@ -3,8 +3,8 @@ import datetime
 import json
 from pathlib import Path
 
-from helpers import save_useful_info
-from train import train
+from ZEGGS.helpers import save_useful_info
+from ZEGGS.train import train
 
 
 def train_zeggs():
