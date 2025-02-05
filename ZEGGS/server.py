@@ -231,8 +231,7 @@ def health_check():
     }
     return jsonify(status)
 
-
-if __name__ == "__main__":
+def run():
     load_dotenv()
     host = os.getenv('SERVER_HOST', '127.0.0.1')
     port = int(os.getenv('SERVER_PORT', 5003))
@@ -243,3 +242,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     app.run(host=host, port=port, debug=False)
+
+if __name__ == "__main__":
+    run()
